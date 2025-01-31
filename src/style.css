@@ -3,6 +3,7 @@
   line-height: 1.5;
   font-weight: 400;
   font-size: 16px;
+  letter-spacing: 0.01em;
 
   color-scheme: light dark;
   color: #023135;
@@ -25,6 +26,10 @@ body {
   max-width: 1440px;
   width: 100%;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 ul, li {
@@ -36,13 +41,33 @@ a {
   font-size: 14px;
 }
 
+h2,
+h3,
+h4 {
+  font-weight: 400;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
 h1 {
   font-size: 50px;
   line-height: 1.28;
-  letter-spacing: 0.01em;
   color: #32404d;
-  font-weight: 400;
   margin: 0;
+  font-weight: 400;
+}
+h2 {
+  font-size: 32px;
+  line-height: 1.38;
+}
+
+h3 {
+  font-size: 24px;
+  line-height: 1.33;
+}
+h4 {
+  font-size: 20px;
+  line-height: 1.4;
 }
 
 button {
@@ -58,37 +83,42 @@ button {
   font-size: 16px;
 }
 
-.header-container {
+
+/* header */
+.header {
+  padding: 16px 0 32px 0;
   display: flex;
-  width: 1040px;
   align-items: center;
   justify-content: space-between;
-  padding: 0 200px;
 }
-.header {
-  margin: 16px 0 32px 0;
-  display: flex;
-  height: 50px;
+
+.link-logo {
+  cursor: pointer;
 }
 
 .nav ul {
   display: flex;
   gap: 48px;
 }
-.hero {
+
+/* Hero */
+.hero-wrapper {
+  position: relative;
   height: 615px;
-  background: url("./img/background-header-hero.png");
+  background-image: url("./img/background-header-hero.png");
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
   margin-top: -98px;
+}
+.hero {
   display: flex;
-  gap: 41px;
 }
 
 .hero-text {
   width: 542px;
   height: 418px;
-  margin-left: 200px;
-  padding-top: 135px;
+  margin-top: 37px;
 }
 .hero-text p {
   margin-top: 21px;
@@ -99,13 +129,26 @@ button {
   width: 200px;
 }
 
-.hero-img {
-  margin-top: 98px;
+@media screen and (min-device-pixel-ratio: 2),
+(min-resolution: 2dppx),
+(min-resolution: 192dpi) {
+  .hero {
+    background-image: url("./img/background-header-hero-2x.png");
+  }
 }
+
+
+
+/* help-list */
 
 .help-list {
   text-align: center;
-  padding: 40px 200px 60px 200px;
+  padding: 40px 0 60px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
 }
 .help-list p {
   font-size: 10px;
@@ -117,25 +160,141 @@ button {
 }
 
 .subjects-list {
+  padding: 0;
+  width: 1040px;
   margin-top: 28px;
   display: flex;
-  gap: 18px;
+  gap: 25px;
 }
 .subjects-list li {
   border: 1px solid #007a5c;
   border-radius: 24px;
   font-size: 14px;
   line-height: 1.43;
-  letter-spacing: 0.01em;
   color: #007a5c;
   padding: 8px 15px;
+}
+
+
+/* about */
+.about {
+  padding: 29px 200px 39px 200px;
+  margin: 0 auto;
+}
+
+.about-item {
+  margin: 65px 28px 0 28px;
+  height: 759px;
+  background-image: url("./img/about.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center 22px;
+  position: relative;
 }
 
 @media screen and (min-device-pixel-ratio: 2),
 (min-resolution: 2dppx),
 (min-resolution: 192dpi) {
-  .hero {
-    background-image: url("./img/background-header-hero-2x.png");
+  .about-item {
+    background-image: url("./img/about-2x.png");
   }
 }
 
+.text-about {
+  width: 218px;
+  border: 1px solid #ebf4ff;
+  border-radius: 24px;
+  box-shadow: 0 4px 7px 0 rgba(222, 234, 249, 0.59);
+  background: #fff;
+  padding: 16px 21px 30px 21px;
+  text-align: center;
+}
+.text-about p {
+  margin-top: 24px;
+}
+.number {
+  border-radius: 18px;
+  width: 36px;
+  height: 36px;
+  background: #32404d;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  font-size: 14px;
+}
+.item-one {
+  margin-top: -19px;
+  height: 152px;
+}
+.img-one {
+  margin: 12px 0 0 141px;
+}
+.item-two {
+  height: 129px;
+  position: absolute;
+  right: 0;
+  top: 127px;
+}
+.img-two {
+  position: absolute;
+  right: 130px;
+  top: 313px;
+}
+
+.item-three {
+  height: 129px;
+  position: absolute;
+  bottom: 200px;
+}
+
+.img-three {
+  position: absolute;
+  bottom: 150px;
+  left: 160px;
+}
+
+
+/* better */
+.better {
+  margin: 0 auto;
+  padding: 20px 0 100px 0;
+}
+.better-list {
+  display: flex;
+  gap: 80px;
+  margin-top: 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+.better-list li {
+  width: 247px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  gap: 12px;
+}
+
+.better-list li p {
+  font-size: 9px;
+  line-height: 2.66;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #000;
+}
+
+
+
+/* problems */
+.problems {
+  margin: 0 auto;
+  padding: 20px 0 100px 0;
+}
+
+.title {
+  margin-top: 10px;
+}
